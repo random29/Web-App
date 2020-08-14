@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head >
+    <title>Learn Diary</title>
+    <div class="card-action">
+        <form style="float: right;">
+        </form>
+    </div>
+   <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body class="container">
+<div class="row">
+    <div class="row" style="text-align: center;">
+        <div class="col s12">
+
+            <form style="float: left">
+                <h1>Библиотека курсов - всего часов за учёбой</h1>
+            </form>
+            <form style="text-align: center">
+                <h1 data-th-text="${res}"></h1>
+            </form>
+            <form name="f" data-th-action="@{/all-notes/search}">
+                <div class="row">
+                    <div class="input-field col s12">
+                         <input placeholder="Поиск" name="name" type="text" class="validate" data-th-value="${name}">
+                <!--<button type="submit" class="waves-effect waves-light btn">Go</button>-->
+                    </div>
+                </div>
+                <button class="materialize-red waves-ripple btn-large" type="submit">Поиск</button>
+                <!--<form style="float: right">-->
+                <!--<p data-th-text="${res}"></p>-->
+                <!--</form>-->
+            </form>
+            <!--<form data-th-action="@{/all-notes/add}">-->
+            <!--<button class="materialize-red waves-ripple btn-large" type="submit" data-th-if="${@accountService.hasAuthority('ADD')}"  >Добавить курсы</button>-->
+        <!--</form>-->
+        </div>
+    </div>
+
+
+    <p data-th-if="${games.size() == 0}" class="no-items"><br />Тут ничего нет</p>
+    <ul class="collection">
+        <li class="collection-item" data-th-each="game : ${games}">
+            <a data-th-href="@{/all-notes/{id} (id=${game.id}) }">
+                <span data-th-text="${game.name}"></span>
+            </a>
+        </li>
+    </ul>
+        <!--</div>-->
+    <!--</div>-->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/sticky.js"></script>
+<!--<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>-->
+</div>
+
+
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/random29/" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        <li><a href="/" class="icon fa-home"><span class="label">Home</span></a></li>
+        <li><a href="/logout" class="icon fa-sign-out"><span class="label">Sing Out</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Ильин Илья, ITPark, 2019</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn Diary</title>
+    <h3 style="text-align: center" data-th-text="${user}"></h3>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+
+</head>
+<body class="container">
+<div class="row">
+    <form style="float: right;" name="f" data-th-action="@{/account/edit}">
+        <h5 data-th-text="${init}"></h5>
+        <button style="float: right" class="materialize-red waves-ripple btn-large" type="submit">Редактировать
+            аккаунт.
+        </button>
+    </form>
+    <h5 data-th-if="${check}" data-th-text="${money}"></h5>
+    <h5 data-th-text="${group}"></h5>
+    <form style="float: left" data-th-action="@{/games}">
+        <div class="container">
+            <div class="bottom-right">
+                <button class="materialize-red waves-ripple btn-large" type="submit">Перейти к курсам.
+                </button>
+            </div>
+        </div>
+    </form>
+    <!--<form style="float:left;" data-th-action="@{/all-notes}">-->
+        <!--<button class="materialize-red waves-ripple btn-large" type="submit">Покупка курсов.</button>-->
+    <!--</form>-->
+    <form data-th-action="@{/balance}">
+        <button class="materialize-red waves-ripple btn-large" type="submit">Пополнение баланса</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/sticky.js"></script>
+
+</div>
+
+
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/random29/" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        <li><a href="/" class="icon fa-home"><span class="label">Home</span></a></li>
+        <li><a href="/logout" class="icon fa-sign-out"><span class="label">Sing Out</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Ильин Илья, ITPark, 2019</li>
+        <li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>
+
+
+<!--<div class="row">-->
+<!--<form style="text-align: center"><h6>Денег на аккаунте -</h6></form>-->
+<!--<form style="text-align: right">-->
+<!--<h6 data-th-text="${money}"></h6></form>-->
+<!--<link rel="stylesheet" media="screen" th:href="@{/css/style.css}"/>-->
+<!--</div>-->

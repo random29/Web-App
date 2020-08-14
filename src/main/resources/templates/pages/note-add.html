@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head ><title>Gamers Diary</title> <link rel="stylesheet" href="../assets/css/main.css" /></head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col s12">
+            <h1>Добавить игру</h1>
+            <form data-th-action="@{/games/add}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <!--<label for="name">Название игры</label>-->
+                        <input placeholder="Название курса" id="name" name="name" type="text" class="validate" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <!--<label for="name">Название игры</label>-->
+                        <input placeholder="Цена курса" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="price" name="price" type="text" class="validate" required>
+                    </div>
+                </div>
+                <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                <div class="row">
+                    <br />
+                    <div class="input-field col s12">
+                        <!--<label for="content"><br />Описание игры</label>-->
+                        <textarea placeholder="Описание курса" id="content"  name="content" class="materialize-textarea" required></textarea>
+                    </div>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">Add</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/resize.js"></script>
+    <script src="../assets/js/sticky.js"></script>
+    <!--<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>-->
+
+</div>
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/random29/" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        <li><a href="/" class="icon fa-home"><span class="label">Home</span></a></li>
+        <li><a href="/logout"  class="icon fa-sign-out"><span class="label">Sing Out</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Ильин Илья, ITPark, 2019</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>

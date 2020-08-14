@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Learn Diary</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+<header id="header">
+    <h1>Шифр Виженера</h1>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <form data-th-action="@{/vigenere}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Текст" id="content" name="content" type="text" class="validate"
+                               data-th-value="${content}" required>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="input-field col s12 ">
+                        <input placeholder="Ключ" id="key" name="key" type="text" class="validate"
+                               data-th-value="${key}" required>
+                    </div>
+                </div>
+                <br/>
+                <div style="text-align: center;">
+                    <span class="card-title" style="font-size: xx-large" data-th-text="${result} "></span>
+                </div>
+                <br/>
+                <button class="waves-effect waves-light btn" type="submit">Зашифровать</button>
+            </form>
+            <form data-th-action="@{/vigenereSave}" >
+                <button class="waves-effect waves-light btn" type="submit">Сохранить результат.</button>
+            </form>
+            <form data-th-action="@{/vigenereDec}" >
+                <button class="waves-effect waves-light btn" type="submit">Страница расшифровки.</button>
+            </form>
+<!--            <form data-th-action="@{/deleteVigenere}" >-->
+<!--                <button class="waves-effect waves-light btn" type="submit">Удалить сохранённые данные.</button>-->
+<!--            </form>-->
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/sticky.js"></script>
+</body>
+<!-- Footer -->
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/random29/" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        <li><a href="/" class="icon fa-home"><span class="label">Home</span></a></li>
+        <li><a href="/logout" class="icon fa-sign-out"><span class="label">Sing Out</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Ильин Илья, ITPark, 2019</li>
+        <li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
+
+<!-- Scripts -->
+
+</body>
+</html>

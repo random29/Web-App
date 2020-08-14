@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head  ><title>Learn Diary</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<div class="container">
+
+<div class="row">
+
+
+    <div class="row" style="text-align: center;">
+        <div class="col s12">
+            <h1 >Логин</h1>
+
+            <form name="f" data-th-action="@{/login}" method="post">
+                <div th:if="${param.error}" class="alert alert-error">
+                    Неправильный логин или пароль.
+
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success">
+                    Вы вышли из системы.
+
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Логин" id="login" name="username" type="text" class="validate" required>
+                        <label for="login"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Пароль" id="password" name="password" type="password" class="validate"
+                               required>
+                        <label for="password"></label>
+                    </div>
+                </div>
+                <button class="materialize-red waves-ripple btn-large" type="submit">Войти</button>
+            </form>
+            <form name="r" data-th-action="@{/register}" >
+                <button class="materialize-red waves-ripple btn-large" type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/sticky.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</div>
+
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/random29/" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        <li><a href="/" class="icon fa-home"><span class="label">Home</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Ильин Илья, ITPark, 2019</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
+
+<!--<script src="assets/js/sticky.js"></script>-->
+</body>
+</html>

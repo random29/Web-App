@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Learn Diary</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+<meta charset="utf-8"/>
+
+<header id="header">
+    <h1>Метод Диффи-Хеллмана. Персонаж B.</h1>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <form accept-charset="utf-8" data-th-action="@{/diffi-b-gen}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Размерность." id="razm" name="razm" type="text" class="validate"
+                               data-th-value="${razm}" required>
+                    </div>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">Генерировать.</button>
+                <div style="text-align: center;">
+                    <span class="card-title" style="font-size: xx-large" data-th-text="${key2}"></span>
+                </div>
+            </form>
+
+            <form accept-charset="utf-8" data-th-action="@{/diffi-open-b}" method="post">
+                <div style="text-align: center;">
+                    <span class="card-title" style="font-size: xx-large"
+                          data-th-text="${p} "></span>
+                </div>
+                <div style="text-align: center;">
+                    <span class="card-title" style="font-size: xx-large"
+                          data-th-text="${g} "></span>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">Генерировать P и G.</button>
+            </form>
+            <form accept-charset="utf-8" data-th-action="@{/diffi-gen-open-b}" method="post">
+                <div style="text-align: center;">
+                    <span class="card-title" style="font-size: xx-large" data-th-text="${B}"></span>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">Генерировать открытые ключи.</button>
+            </form>
+            <form accept-charset="utf-8" data-th-action="@{/diffi-gen-b}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div style="text-align: center;">
+                            <span class="card-title" style="font-size: xx-large"
+                                  data-th-text="${K} "></span>
+                        </div>
+                    </div>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">Генерировать K</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/sticky.js"></script>
+</body>
+<!-- Footer -->
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/random29/" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        <li><a href="/" class="icon fa-home"><span class="label">Home</span></a></li>
+        <li><a href="/logout" class="icon fa-sign-out"><span class="label">Sing Out</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Ильин Илья, ITPark, 2019</li>
+        <li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
+
+<!-- Scripts -->
+
+</body>
+</html>

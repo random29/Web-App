@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn Diary</title>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <div class="row" style="text-align: center">
+
+        <div class="col s10">
+            <div class="card">
+                <div class="card-body">
+                    <!--<img class="card-img-top" src="../images/bg01.jpg" alt="Card image cap">-->
+                    <span class="card-title" style="font-size: xx-large" data-th-text="${note.name} "></span>
+                    <br/>
+                    <br/>
+                    <p class="card-text" style="font-size: large" data-th-text="${note.content}"></p>
+                    <h5 style="float: left">Цена - </h5>
+                    <h5 style="float: left" data-th-text="${note.price}"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col s10">
+            <div class="card">
+                <!--<div class="card-body">-->
+                <!--&lt;!&ndash;<img class="card-img-top" src="../images/bg01.jpg" alt="Card image cap">&ndash;&gt;-->
+                <!--<span class="card-title" style="font-size: xx-large" data-th-text="${note.name} "></span>-->
+                <!--<br />-->
+                <!--<p class="card-text" style="font-size: large" data-th-text="${note.content}"></p>-->
+                <!--</div>-->
+                <div class="card-action" data-th-if="${@accountService.hasAuthority('REMOVE')}">
+                    <form style="float: left;" data-th-action="@{/games/{id}/remove(id=${note.id})}" method="post">
+
+                        <button class="waves-effect waves-light btn" type="submit">Удалить</button>
+                    </form>
+
+                    <form style="float: right;" data-th-if="${@accountService.hasAuthority('REMOVE')}"
+                          data-th-action="@{/games/{id}/edit(id=${note.id})}">
+                        <button class="waves-effect waves-light btn" type="submit">Исправить</button>
+                    </form>
+                </div>
+                <div class="card-action" data-th-if="${@accountService.isBought({id})}">
+                    <form style="float: right;" data-th-action="@{/games/{id}/checked(id=${note.id})}" method="post">
+                        <input type="text" data-th-value="${input}" id="input" name="input" class="validate" min="0"
+                               required>
+                        <label for="input"></label>
+                        <button class="waves-effect waves-light btn" type="submit">Прошёл!</button>
+                    </form>
+
+                    <form style="float: right">
+                        <input type="checkbox" name="active" th:checked="${test}"/>
+                        <label>Пройдено ли?</label>
+                    </form>
+                    <!--<form style="float: right">-->
+
+                    <!--</form>-->
+                </div>
+                <div class="card-action" data-th-if="${!@accountService.isBought({id})}">
+                    <form data-th-action="@{/games/{id}/buy(id=${note.id})}" method="post">
+                        <button class="waves-effect waves-light btn" type="submit">Купить!</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <br/>
+            <br/>
+            <br/>
+            <ul class="collection" >
+                <li class="collection-item" data-th-each="game : ${note.comments}">
+                    <p data-th-text="${game}" style="overflow-wrap:break-word;"></p>
+                </li>
+            </ul>
+            <form data-th-action="@{/games/{id}/comment(id=${note.id})}" method="post">
+                <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <!--<label for="comment">Комментарий</label>-->
+                        <textarea required placeholder="Что думаете?" name="comment" class="materialize-textarea"
+                                  id="comment"></textarea>
+
+                        <!--<button type="submit">Опубликовать</button>-->
+                    </div>
+                </div>
+                <!--<input type="submit"  value="Войти в аккаунт">Опубликовать</input>-->
+                <button class="waves-effect waves-light btn" type="submit">Опубликовать</button>
+            </form>
+
+
+        </div>
+    </div>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/sticky.js"></script>
+    <script src="../assets/js/resize.js"></script>
+    <!--<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>-->
+</div>
+
+
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/random29/" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        <li><a href="/" class="icon fa-home"><span class="label">Home</span></a></li>
+        <li><a href="/logout" class="icon fa-sign-out"><span class="label">Sing Out</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Ильин Илья, ITPark, 2019</li>
+        <li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
+</body>
+</html>

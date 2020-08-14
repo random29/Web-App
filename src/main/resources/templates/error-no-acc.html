@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head >   <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h1 style="text-align: center">Здесь пока нет такого аккаунта!</h1>
+            <form data-th-action="@{/account}" style="text-align: center">
+                <button class="materialize-red waves-ripple btn-large" type="submit">Вернуться к себе</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/sticky.js"></script>
+
+    <div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</div>
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/random29/" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        <li><a href="/" class="icon fa-home"><span class="label">Home</span></a></li>
+        <li><a href="/login?logout" class="icon fa-sign-out"><span class="label">Sing Out</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Ильин Илья, ITPark, 2019</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>

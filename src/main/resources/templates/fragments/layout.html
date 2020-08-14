@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head data-th-fragment="headFragment(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-th-text="${title}"></title>
+
+    <link data-th-href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+    <link rel="stylesheet"
+          data-th-href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css}">
+</head>
+<body>
+
+<div data-th-fragment="logoutFragment" data-th-remove="tag">
+    <form data-th-action="@{/logout}" method="post" data-th-if="${@accountService.isAuthenticated()}">
+        <button type="submit" class="waves-effect waves-light btn">Logout</button>
+    </form>
+</div>
+
+<div data-th-fragment="scriptsFragment">
+    <script type="text/javascript" data-th-src="@{https://code.jquery.com/jquery-3.2.1.min.js}"></script>
+    <script data-th-src="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js}"></script>
+</div>
+</body>
+</html>

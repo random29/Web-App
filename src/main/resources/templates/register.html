@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head ><title>Gamers Diary</title><link rel="stylesheet" href="assets/css/main.css" /></head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col s12">
+            <h1 style="text-align: center">Зарегистрироваться</h1>
+            <form data-th-action="@{/register}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="username">Ваше имя пользователя</label>
+                        <input placeholder="Имя пользователя" id="username" name="username" type="text" class="validate"
+                               required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="password"><br />Ваш пароль</label>
+                        <input placeholder="Пароль" id="password" name="password" type="password" class="validate" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="password"><br />Повторите пароль</label>
+                        <input placeholder="Пароль" id="123" name="123" type="password" class="validate" required>
+                    </div>
+                </div>
+                <br />
+                <button class="waves-effect waves-light btn" type="submit">Отправить</button>
+            </form>
+
+
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/sticky.js"></script>
+    <script src="assets/js/test.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+    <div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</div>
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/random29/" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        <li><a href="/" class="icon fa-home"><span class="label">Home</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Ильин Илья, ITPark, 2019</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>
